@@ -454,11 +454,13 @@ metadata:
 spec:
   params:
     - name: repository
-      value: "$(event.repository.url)"
+      value: "$(event.repository.html_url)"
     - name: branch
       value: "$(event.ref)"
     - name: revision
       value: "$(event.head_commit.id)"
+    - name: triggerName
+      value: "github-commit"
 ---
 apiVersion: tekton.dev/v1beta1
 kind: EventListener
